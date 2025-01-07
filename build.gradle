@@ -23,6 +23,11 @@ repositories {
 	mavenCentral()
 }
 
+// Optional: Customize JAR name
+bootJar {
+	archiveFileName = 'fund-transfer.jar'
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'

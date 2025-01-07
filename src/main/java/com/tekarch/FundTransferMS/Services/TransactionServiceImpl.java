@@ -5,6 +5,7 @@ import com.tekarch.FundTransferMS.Services.Interface.TransactionService;
 import com.tekarch.FundTransferMS.model.AccountsDTO;
 import com.tekarch.FundTransferMS.model.Transactions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -20,7 +21,8 @@ public class TransactionServiceImpl implements TransactionService {
     @Autowired
     private RestTemplate restTemplate;
 
-    String url = "http://localhost:8080/accounts";
+    @Value("${accounts.ms.url}")
+    String url;
 
     @Override
     public Transactions transferFunds(Transactions fundTransfer) {
